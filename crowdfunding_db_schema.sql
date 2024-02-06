@@ -39,8 +39,8 @@ CREATE TABLE "campaign" (
     "backers_count" integer   NOT NULL,
     "country" varchar   NOT NULL,
     "currency" varchar   NOT NULL,
-    "launched_date" datetime   NOT NULL,
-    "end_date" datetime   NOT NULL,
+    "launched_date" date   NOT NULL,
+    "end_date" date   NOT NULL,
     "category_id" varchar   NOT NULL,
     "subcategory_id" varchar   NOT NULL,
     CONSTRAINT "pk_campaign" PRIMARY KEY (
@@ -56,4 +56,18 @@ REFERENCES "category" ("category_id");
 
 ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "subcategory" ("subcategory_id");
+
+-- Verify tables were created correctly
+select * from contacts
+select * from category
+select * from subcategory
+select * from campaign
+
+-- Import csv files
+
+-- Verify each table was imported correctly
+select * from contacts
+select * from category
+select * from subcategory
+select * from campaign
 
